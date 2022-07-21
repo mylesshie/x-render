@@ -1,10 +1,11 @@
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/lib/locale/zh_CN';
+import enUS from 'antd/lib/locale/en_US';
 import copyTOClipboard from 'copy-text-to-clipboard';
 import {
   mapping as defaultMapping,
   widgets as defaultWidgets,
-} from 'form-render';
+} from 'bytesforce-form-render';
 import React, {
   forwardRef,
   useEffect,
@@ -56,8 +57,9 @@ function Provider(props, ref) {
     fieldRender,
     fieldWrapperRender,
     elementRender,
+    renderProps,
+    locale
   } = props;
-
   const transformer = {
     from: schema => schema,
     to: schema => schema,
@@ -213,12 +215,13 @@ function Provider(props, ref) {
     fieldRender,
     fieldWrapperRender,
     elementRender,
+    renderProps, // 这里透传外部接收的form-render配置
     ...rootState,
   };
 
   return (
     <DndProvider backend={HTML5Backend} context={window}>
-      <ConfigProvider locale={zhCN}>
+      <ConfigProvider locale={locale === "en" ? enUS : zhCN}>
         <Ctx.Provider value={setState}>
           <StoreCtx.Provider value={store}>{children}</StoreCtx.Provider>
         </Ctx.Provider>

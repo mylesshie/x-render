@@ -1,4 +1,4 @@
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from 'bytesforce-form-render';
 import React, { useEffect, useState } from 'react';
 import { defaultGlobalSettings } from '../../settings';
 import { useGlobal, useStore } from '../../utils/hooks';
@@ -6,7 +6,7 @@ import { useGlobal, useStore } from '../../utils/hooks';
 export default function GlobalSettings({ widgets }) {
   const form = useForm();
   const [innerUpdate, setInnerUpdate] = useState(false);
-  const { widgets: globalWidgets, frProps, userProps = {}, mapping } = useStore();
+  const { widgets: globalWidgets, frProps, userProps = {}, mapping, renderProps } = useStore();
   const setGlobal = useGlobal();
   const globalSettings = userProps.globalSettings || defaultGlobalSettings;
 
@@ -37,6 +37,7 @@ export default function GlobalSettings({ widgets }) {
         }}
         mapping={mapping}
         widgets={{ ...globalWidgets, ...widgets }}
+        {...renderProps}
       />
     </div>
   );

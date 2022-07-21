@@ -103,6 +103,8 @@ export interface FRGeneratorProps {
   onSchemaChange?: (schema: any) => void;
   /** 画布组件选择回调 */
   onCanvasSelect?: (schema: any) => void;
+  /** 配置内部form-render额外属性 */
+  renderProps?: any;
 }
 
 export interface SettingsProps {

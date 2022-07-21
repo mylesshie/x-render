@@ -125,7 +125,7 @@ const Canvas = ({ onSelect }) => {
           </Button>
         )}
         {_showDefaultBtns[3] !== false && (
-          <Button type="primary" className="mr2" onClick={toggleModal}>
+          <Button className="mr2" onClick={toggleModal}>
             {getDefaultBtnText(_showDefaultBtns[3], t('导出schema'))}
           </Button>
         )}

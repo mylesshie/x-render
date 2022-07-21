@@ -16,7 +16,7 @@ const Generator = forwardRef(
     }, [local]);
 
     return (
-      <Provider ref={ref} {...props}>
+      <Provider ref={ref} locale={local} {...props}>
         <div className="fr-generator-container">
           <Sidebar fixedName={fixedName} />
           <Canvas onSelect={onCanvasSelect} />

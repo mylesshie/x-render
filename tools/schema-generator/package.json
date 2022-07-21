@@ -1,6 +1,6 @@
 {
   "name": "bytesforce-fr-generator",
-  "version": "2.7.8-beta.10",
+  "version": "2.7.8-beta.14",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
@@ -41,7 +41,8 @@
   "peerDependencies": {
     "antd": "4.x",
     "react": ">=16.14.0",
-    "react-dom": ">=16.14.0"
+    "react-dom": ">=16.14.0",
+    "bytesforce-form-render": "^1.13.11-beta.2"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"

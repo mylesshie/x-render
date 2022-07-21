@@ -15,7 +15,9 @@
     "组件配置": "Component Setting",
     "表单配置": "Form Setting",
     "此处配置有误": "Incorrect configuration here",
-    "配置错误：Setting不是数组": "Configuration error: setting is not an array"
+    "配置错误：Setting不是数组": "Configuration error: setting is not an array",
+    "删除": "Delete",
+    "添加": "Add"
   },
   "components": {
     "基础组件": "BASIC",

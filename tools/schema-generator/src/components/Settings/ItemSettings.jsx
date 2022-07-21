@@ -1,4 +1,4 @@
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from 'bytesforce-form-render';
 import React, { useEffect, useState } from 'react';
 import {
   advancedElements,
@@ -24,6 +24,7 @@ export default function ItemSettings({ widgets }) {
     userProps = {},
     widgets: globalWidgets,
     mapping: globalMapping,
+    renderProps,
   } = useStore();
 
   const { settings, commonSettings, hideId, validation, transformer } =
@@ -139,6 +140,7 @@ export default function ItemSettings({ widgets }) {
         watch={{
           '#': v => setTimeout(() => onDataChange(v), 0),
         }}
+        {...renderProps}
       />
     </div>
   );
