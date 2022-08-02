@@ -24,7 +24,7 @@ const RenderList = ({
   displayType,
 }) => {
   const { formData, flatten } = useStore();
-  const { onItemChange, removeTouched, methods, layoutWidgets } = useTools();
+  const { onItemChange, removeTouched, methods, layoutWidgets, widgets } = useTools();
 
   const { props = {} } = schema;
 
@@ -40,8 +40,8 @@ const RenderList = ({
     // TODO: listData会有不少“窟窿”，submit 的时候，listData 需要补齐 or filter
     listData = get(formData, dataPath);
   }
-
-  const displayList = Array.isArray(listData) ? listData : [{}];
+  // 默认为空list，以前是[{}]，会导致无数据时渲染一行空数据
+  const displayList = Array.isArray(listData) ? listData : [];
 
   const changeList = newList => {
     onItemChange(dataPath, newList);
@@ -146,6 +146,7 @@ const RenderList = ({
     errorFields,
     displayType,
     getFieldsProps,
+    widgets
   };
 
   if (layoutWidgets && layoutWidgets[renderWidget]) {
